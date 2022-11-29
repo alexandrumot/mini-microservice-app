@@ -14,18 +14,38 @@ const PostCreate = () => {
     });
 
     setTitle("");
+    setContent("");
   };
+
+  // const onPostSubmit = async (e: React.KeyboardEvent) => {
+  //   if (e.metaKey && e.key === "Enter") {
+  //     console.log("SUBMITTED!")
+  //   }
+  // }
 
   return (
     <div className="m-4">
       <form onSubmit={onSubmit}>
         <div className="form-group mb-3">
           <label>Title</label>
-          <input value={title} onChange={e => setTitle(e.target.value)} className="form-control w-25" maxLength={30}/>
+          <input 
+            value={title}  
+            onChange={e => setTitle(e.target.value)} 
+            className="form-control w-25" 
+            maxLength={30} 
+            minLength={2}/>
           <label>Content</label>
-          <textarea value={content} onChange={e => setContent(e.target.value)} className="form-control" rows={5}></textarea>
+          <textarea 
+            value={content} 
+            onChange={e => setContent(e.target.value)} 
+            className="form-control" 
+            rows={5} 
+            // onKeyDown={onPostSubmit} 
+            maxLength={2000}            
+            minLength={2}>
+          </textarea>
         </div>
-        <button className="btn btn-primary">Submit</button>
+        <button id="submit-post-btn" className="btn btn-primary">Post</button>
       </form>
     </div>
   )
