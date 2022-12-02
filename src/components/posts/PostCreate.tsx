@@ -9,7 +9,7 @@ const PostCreate = () => {
   const onSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    await axios.post("http://localhost:3000/posts", {
+    await axios.post("http://localhost:3001/posts", {
       title, content
     });
 
