@@ -1,7 +1,6 @@
 {
   "name": "mini-microservice-app-client",
   "version": "0.1.0",
-  "private": true,
   "author": "Alexandru Mot",
   "repository": "https://github.com/alexandrumot/mini-microservice-app3",
   "license": "ISC",
@@ -22,7 +21,7 @@
   },
   "scripts": {
     "start": "concurrently -kill-others  \"npm run start-comments\" \"npm run start-posts\" \"npm run start-client\"",
-    "start-client": "PORT=3002 react-scripts start",
+    "start-client": "PORT=3000 react-scripts start",
     "start-posts": "cd backend/posts && npm run start",
     "start-comments": "cd backend/comments && npm run start",
     "build": "react-scripts build",
